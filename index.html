@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfólio - Yan Garrido</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #4b0082; /* Roxo Pro Tools */
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      background-color: #2d2d2d;
+    }
+
+    nav button {
+      flex: 1;
+      padding: 15px;
+      background-color: #2d2d2d;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    nav button:hover, nav button.active {
+      background-color: #4b0082;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    input[type="file"] {
+      margin-top: 10px;
+    }
+
+    .music-list audio {
+      display: block;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Portfólio Musical - Yan Garrido</h1>
+  </header>
+
+  <nav>
+    <button class="tab-btn active" onclick="openTab('fotos')">Fotos</button>
+    <button class="tab-btn" onclick="openTab('musicas')">Músicas</button>
+  </nav>
+
+  <div class="content">
+    <div id="fotos" class="tab-content">
+      <h2>Upload de Fotos</h2>
+      <input type="file" accept="image/*" multiple>
+      <p style="margin-top:10px;">(Para funcionar de verdade, é necessário um backend.)</p>
+    </div>
+
+    <div id="musicas" class="tab-content hidden">
+      <h2>Minhas Produções</h2>
+      <div class="music-list">
+        <p>Adicione aqui os players com suas músicas:</p>
+        <audio controls>
+          <source src="sua-musica-1.mp3" type="audio/mpeg">
+          Seu navegador não suporta áudio HTML5.
+        </audio>
+        <audio controls>
+          <source src="sua-musica-2.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openTab(tabName) {
+      const contents = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-btn');
+
+      contents.forEach(content => {
+        content.classList.add('hidden');
+      });
+
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      document.getElementById(tabName).classList.remove('hidden');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

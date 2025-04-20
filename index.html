@@ -2,112 +2,78 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Portfólio - Yan Garrido</title>
+  <title>Portfólio de Garrido</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #1e1e1e;
-      color: #ffffff;
       margin: 0;
       padding: 0;
+      background-color: #1f1f2e;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
     }
 
-    header {
-      background-color: #4b0082; /* Roxo Pro Tools */
-      padding: 20px;
+    h1 {
+      color: #b48fff;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #b48fff;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 400px;
       text-align: center;
     }
 
-    header h1 {
-      margin: 0;
-    }
-
-    nav {
-      display: flex;
-      background-color: #2d2d2d;
-    }
-
-    nav button {
-      flex: 1;
+    .link {
+      background-color: #3c3c50;
+      color: #fff;
       padding: 15px;
-      background-color: #2d2d2d;
-      color: white;
-      border: none;
-      cursor: pointer;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s ease;
     }
 
-    nav button:hover, nav button.active {
-      background-color: #4b0082;
+    .link:hover {
+      background-color: #b48fff;
+      color: #1f1f2e;
     }
 
-    .content {
-      padding: 20px;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    input[type="file"] {
-      margin-top: 10px;
-    }
-
-    .music-list audio {
-      display: block;
-      margin: 10px 0;
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Portfólio Musical - Yan Garrido</h1>
-  </header>
+  <h1>Re-recording Engineer</h1>
 
-  <nav>
-    <button class="tab-btn active" onclick="openTab('fotos')">Fotos</button>
-    <button class="tab-btn" onclick="openTab('musicas')">Músicas</button>
-  </nav>
-
-  <div class="content">
-    <div id="fotos" class="tab-content">
-      <h2>Upload de Fotos</h2>
-      <input type="file" accept="image/*" multiple>
-      <p style="margin-top:10px;">(Para funcionar de verdade, é necessário um backend.)</p>
-    </div>
-
-    <div id="musicas" class="tab-content hidden">
-      <h2>Minhas Produções</h2>
-      <div class="music-list">
-        <p>Adicione aqui os players com suas músicas:</p>
-        <audio controls>
-          <source src="sua-musica-1.mp3" type="audio/mpeg">
-          Seu navegador não suporta áudio HTML5.
-        </audio>
-        <audio controls>
-          <source src="sua-musica-2.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-    </div>
+  
+  <div class="links">
+    <a class="link" href="https://dublagem.fandom.com/wiki/Sangue_Oculto" target="_blank">Sangue Oculto</a>
+    <a class="link" href="https://dublagem.fandom.com/wiki/Volta_Para_Mim" target="_blank">Volta pra mim</a>
+    <a class="link" href="https://hudson-rex.fandom.com/wiki/Hudson_%26_Rex_Wiki" target="_blank">Hudson & Rex</a>
+    <a class="link" href="https://dublagem.fandom.com/wiki/Pris%C3%A3o_de_Mentiras" target="_blank">Prisão de Mentiras</a>
   </div>
 
-  <script>
-    function openTab(tabName) {
-      const contents = document.querySelectorAll('.tab-content');
-      const buttons = document.querySelectorAll('.tab-btn');
-
-      contents.forEach(content => {
-        content.classList.add('hidden');
-      });
-
-      buttons.forEach(btn => {
-        btn.classList.remove('active');
-      });
-
-      document.getElementById(tabName).classList.remove('hidden');
-      event.currentTarget.classList.add('active');
-    }
-  </script>
+  <footer>
+    © 2025 Garrido | Produção Musical & Áudio
+  </footer>
 
 </body>
 </html>
